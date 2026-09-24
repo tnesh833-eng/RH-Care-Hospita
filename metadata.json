@@ -1,0 +1,6 @@
+{
+  "name": "City Care Hospital Management System",
+  "description": "Comprehensive Hospital Management System with patient registrations, doctor and department scheduling, appointment tracking, and administrator portal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
