@@ -66,7 +66,10 @@ export const Navbar: React.FC<NavbarProps> = ({
               }`}
             >
               <MapPin className="w-4 h-4 text-rose-500" />
-              <span>Hospitals & Location</span>
+              <span>Hospitals & Google Maps</span>
+              <span className="hidden lg:inline-block text-[10px] font-extrabold uppercase px-1.5 py-0.2 bg-teal-100 text-teal-800 rounded">
+                SerpApi
+              </span>
             </button>
 
             <button

@@ -247,6 +247,44 @@
         "Dermatology & Cosmetology"
       ],
       "image_url": "https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80"
+    },
+    {
+      "id": 6,
+      "name": "RH Care Multi-Specialty & Emergency Trauma - Tech Corridor",
+      "tagline": "Quaternary Trauma Center & Robotic Critical Care Institute",
+      "address": "78/1, Hosur Main Road, Near Infosys Gate 1, Electronic City Phase 1, Bengaluru, Karnataka 560100",
+      "city": "Bengaluru",
+      "state": "Karnataka",
+      "pincode": "560100",
+      "latitude": 12.84524,
+      "longitude": 77.66023,
+      "phone": "+91 (080) 4120-6000",
+      "emergency_hotline": "+91 (080) 4120-6999",
+      "rating": 4.91,
+      "review_count": 980,
+      "beds_count": 420,
+      "icu_beds": 90,
+      "trauma_level": "Level 1 Comprehensive Industrial & Highway Polytrauma",
+      "accreditations": [
+        "NABH Digital & Hospital Standard",
+        "NABL Certified Diagnostic Lab",
+        "JCI Accredited"
+      ],
+      "facilities": [
+        "24/7 Red-Alert Highway & Industrial Trauma Resuscitation",
+        "Advanced Biplane Neuro & Cardiac Catheterization Lab",
+        "DaVinci Surgical Console for Minimally Invasive Surgeries",
+        "Dedicated Toxicology & Occupational Health Unit",
+        "Air & Road Critical Care Transport Ambulance Fleet"
+      ],
+      "operating_hours": "24 Hours Open • OPD: 08:30 AM - 08:00 PM",
+      "departments": [
+        "Cardiology",
+        "General & Robotic Surgery",
+        "Orthopedics & Joint Care",
+        "Internal Medicine & Diabetology"
+      ],
+      "image_url": "https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80"
     }
   ],
   "feedbacks": [
@@ -315,6 +353,17 @@
       "review_date": "2026-09-14",
       "verified": true,
       "comment": "My debilitating sciatica pain was gone the moment I woke up from anesthesia. Dr. Alok Chandra is gifted, compassionate, and takes time to answer every question. Highly recommend the West Institute."
+    },
+    {
+      "id": 7,
+      "hospital_id": 6,
+      "patient_name": "Pooja Hegde",
+      "treatment": "Acute Traumatic Fracture Reconstruction",
+      "doctor_name": "Dr. Vivek Menon, MS, DNB (Ortho)",
+      "rating": 5,
+      "review_date": "2026-09-22",
+      "verified": true,
+      "comment": "Admitted following a highway accident near Electronic City. The prompt trauma team stabilized me in minutes. Dr. Vivek Menon performed minimally invasive fixation. Outstanding medical care right in the tech corridor!"
     }
   ],
   "doctors": [
@@ -677,6 +726,64 @@
       "total_patients": 8900,
       "bio": "Dedicated to curing congenital heart defects in infants and young children through scarless non-surgical device closure.",
       "image": "https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": 13,
+      "doctor_name": "Dr. Vivek Menon",
+      "degrees": "MBBS, MS (Orthopedics), DNB, Fellowship in Adult Reconstruction (Singapore)",
+      "department_id": 3,
+      "department_name": "Orthopedics & Joint Care",
+      "hospital_id": 6,
+      "hospital_name": "RH Care Multi-Specialty & Emergency Trauma - Tech Corridor",
+      "specialization": "Senior Consultant Joint Replacement & Polytrauma Surgeon",
+      "sub_specialties": [
+        "High-Velocity Trauma Fixation",
+        "Robotic Knee Replacement",
+        "Pelvic Reconstruction"
+      ],
+      "experience_years": 17,
+      "opd_timings": "09:30 AM - 04:30 PM (Mon - Sat)",
+      "room_number": "Trauma & Ortho Clinic - Suite 205",
+      "consultation_fee": 900,
+      "languages": [
+        "English",
+        "Kannada",
+        "Hindi",
+        "Malayalam"
+      ],
+      "rating": 4.93,
+      "total_patients": 7200,
+      "bio": "Specialized in complex articular fractures, industrial injury reconstruction, and robotic revision joint surgeries.",
+      "image": "https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80"
+    },
+    {
+      "id": 14,
+      "doctor_name": "Dr. Neha Shenoy",
+      "degrees": "MBBS, MD (General Medicine), DM (Cardiology)",
+      "department_id": 1,
+      "department_name": "Cardiology",
+      "hospital_id": 6,
+      "hospital_name": "RH Care Multi-Specialty & Emergency Trauma - Tech Corridor",
+      "specialization": "Consultant Interventional Cardiologist",
+      "sub_specialties": [
+        "Radial Angioplasty",
+        "Pacemaker Implantation",
+        "Heart Failure Management"
+      ],
+      "experience_years": 14,
+      "opd_timings": "10:00 AM - 05:00 PM (Mon - Fri)",
+      "room_number": "Cardiology Center - Suite 108",
+      "consultation_fee": 950,
+      "languages": [
+        "English",
+        "Kannada",
+        "Hindi",
+        "Konkani"
+      ],
+      "rating": 4.9,
+      "total_patients": 5400,
+      "bio": "Expert in trans-radial cardiac interventions, emergency STEMI management, and peripheral vascular stenting.",
+      "image": "https://images.unsplash.com/photo-1594824813583-7c87c0823297?auto=format&fit=crop&w=600&q=80"
     }
   ],
   "patients": [
@@ -688,7 +795,7 @@
       "gender": "Male",
       "date": "2026-09-24",
       "address": "124, 12th Main Road, Indiranagar, Bengaluru",
-      "created_at": "2026-09-24T14:37:31.628Z"
+      "created_at": "2026-09-24T16:24:49.271Z"
     },
     {
       "id": 2,
@@ -698,7 +805,7 @@
       "gender": "Female",
       "date": "2026-09-25",
       "address": "45, Palm Meadows, Whitefield, Bengaluru",
-      "created_at": "2026-09-24T14:37:31.629Z"
+      "created_at": "2026-09-24T16:24:49.271Z"
     },
     {
       "id": 3,
@@ -708,7 +815,7 @@
       "gender": "Male",
       "date": "2026-09-26",
       "address": "78, Defence Colony, Hebbal, Bengaluru",
-      "created_at": "2026-09-24T14:37:31.629Z"
+      "created_at": "2026-09-24T16:24:49.271Z"
     },
     {
       "id": 4,
@@ -718,42 +825,141 @@
       "gender": "Male",
       "date": "2026-09-27",
       "address": "12, 5th Block, Jayanagar, Bengaluru",
-      "created_at": "2026-09-24T14:37:31.629Z"
+      "created_at": "2026-09-24T16:24:49.271Z"
     },
     {
       "id": 5,
-      "name": "Ananya Roy",
-      "phone": "+91 99887 76655",
-      "age": 32,
+      "name": "Anand Verma",
+      "phone": "+91 98450 77123",
+      "age": 42,
+      "gender": "Male",
+      "date": "2026-09-25",
+      "address": "142 100 Feet Road, Indiranagar, Bengaluru",
+      "created_at": "2026-09-24T16:26:30.443Z"
+    },
+    {
+      "id": 6,
+      "name": "Sneha Patel",
+      "phone": "+91 98860 33451",
+      "age": 34,
       "gender": "Female",
-      "date": "2026-09-28",
-      "address": "Indiranagar 100ft road",
-      "created_at": "2026-09-24T14:37:36.300Z"
+      "date": "2026-09-25",
+      "address": "88 ITPL Main Road, Whitefield",
+      "created_at": "2026-09-24T16:26:48.871Z"
+    },
+    {
+      "id": 7,
+      "name": "Anand Verma",
+      "phone": "+91 98450 77123",
+      "age": 42,
+      "gender": "Male",
+      "date": "2026-09-25",
+      "address": "142, 100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru 560038",
+      "created_at": "2026-09-24T16:31:18.528Z"
+    },
+    {
+      "id": 8,
+      "name": "Rajesh Nair",
+      "phone": "+91 97410 44520",
+      "age": 45,
+      "gender": "Male",
+      "date": "2026-09-25",
+      "address": "78/1, Hosur Main Road, Electronic City Phase 1, Bengaluru 560100",
+      "created_at": "2026-09-24T16:31:21.910Z"
     }
   ],
   "appointments": [
     {
-      "id": 3,
-      "patient_id": 5,
+      "id": 6,
+      "patient_id": 8,
+      "doctor_id": 13,
+      "hospital_id": 6,
+      "appointment_date": "2026-09-25",
+      "appointment_time": "10:00 AM - 12:30 PM (Morning Slot)",
+      "token_number": "RH-2026-2396",
+      "status": "Pending",
+      "created_at": "2026-09-24T16:31:21.911Z",
+      "patient_name": "Rajesh Nair",
+      "patient_phone": "+91 97410 44520",
+      "patient_age": 45,
+      "patient_gender": "Male",
+      "patient_address": "78/1, Hosur Main Road, Electronic City Phase 1, Bengaluru 560100",
+      "doctor_name": "Dr. Vivek Menon",
+      "specialization": "Senior Consultant Joint Replacement & Polytrauma Surgeon",
+      "department_name": "Orthopedics & Joint Care",
+      "hospital_name": "RH Care Multi-Specialty & Emergency Trauma - Tech Corridor",
+      "hospital_address": "78/1, Hosur Main Road, Near Infosys Gate 1, Electronic City Phase 1, Bengaluru, Karnataka 560100",
+      "distance_km": 0,
+      "symptoms": "Industrial ergonomics checkup"
+    },
+    {
+      "id": 5,
+      "patient_id": 7,
       "doctor_id": 1,
       "hospital_id": 1,
-      "appointment_date": "2026-09-28",
+      "appointment_date": "2026-09-25",
       "appointment_time": "10:00 AM - 12:30 PM (Morning Slot)",
-      "token_number": "RH-2026-5058",
+      "token_number": "RH-2026-4169",
       "status": "Pending",
-      "created_at": "2026-09-24T14:37:36.301Z",
-      "patient_name": "Ananya Roy",
-      "patient_phone": "+91 99887 76655",
-      "patient_age": 32,
-      "patient_gender": "Female",
-      "patient_address": "Indiranagar 100ft road",
+      "created_at": "2026-09-24T16:31:18.529Z",
+      "patient_name": "Anand Verma",
+      "patient_phone": "+91 98450 77123",
+      "patient_age": 42,
+      "patient_gender": "Male",
+      "patient_address": "142, 100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru 560038",
       "doctor_name": "Dr. R. Rajeshwar",
       "specialization": "Director & Chief Interventional Cardiologist",
       "department_name": "Cardiology",
       "hospital_name": "RH Care Multi-Specialty Hospital - Central Campus",
       "hospital_address": "14/2, 100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038",
-      "distance_km": 0.2,
-      "symptoms": "Arrhythmia check"
+      "distance_km": 0,
+      "symptoms": "Routine cardiovascular health checkup"
+    },
+    {
+      "id": 4,
+      "patient_id": 6,
+      "doctor_id": 0,
+      "hospital_id": 2,
+      "appointment_date": "2026-09-25",
+      "appointment_time": "10:00 AM - 12:30 PM (Morning Slot)",
+      "token_number": "RH-2026-6334",
+      "status": "Pending",
+      "created_at": "2026-09-24T16:26:48.871Z",
+      "patient_name": "Sneha Patel",
+      "patient_phone": "+91 98860 33451",
+      "patient_age": 34,
+      "patient_gender": "Female",
+      "patient_address": "88 ITPL Main Road, Whitefield",
+      "doctor_name": "Dr. Priya S. Nambiar",
+      "specialization": "Senior Cardiac Electrophysiologist & Pacing Specialist",
+      "department_name": "Cardiology",
+      "hospital_name": "RH Care Heart & Vascular Institute - East Wing",
+      "hospital_address": "88, ITPL Main Road, EPIP Zone, Whitefield, Bengaluru, Karnataka 560066",
+      "distance_km": 0,
+      "symptoms": "General consultation"
+    },
+    {
+      "id": 3,
+      "patient_id": 5,
+      "doctor_id": 0,
+      "hospital_id": 1,
+      "appointment_date": "2026-09-25",
+      "appointment_time": "10:00 AM - 12:30 PM (Morning Slot)",
+      "token_number": "RH-2026-2229",
+      "status": "Pending",
+      "created_at": "2026-09-24T16:26:30.444Z",
+      "patient_name": "Anand Verma",
+      "patient_phone": "+91 98450 77123",
+      "patient_age": 42,
+      "patient_gender": "Male",
+      "patient_address": "142 100 Feet Road, Indiranagar, Bengaluru",
+      "doctor_name": "Dr. R. Rajeshwar",
+      "specialization": "Director & Chief Interventional Cardiologist",
+      "department_name": "Cardiology",
+      "hospital_name": "RH Care Multi-Specialty Hospital - Central Campus",
+      "hospital_address": "14/2, 100 Feet Road, HAL 2nd Stage, Indiranagar, Bengaluru, Karnataka 560038",
+      "distance_km": 0,
+      "symptoms": "General consultation"
     },
     {
       "id": 1,
@@ -764,7 +970,7 @@
       "appointment_time": "10:30 AM",
       "token_number": "RH-2026-0841",
       "status": "Approved",
-      "created_at": "2026-09-24T14:37:31.629Z",
+      "created_at": "2026-09-24T16:24:49.271Z",
       "patient_name": "Ramesh Patel",
       "patient_phone": "+91 98450 12345",
       "patient_age": 54,
@@ -786,7 +992,7 @@
       "appointment_time": "11:15 AM",
       "token_number": "RH-2026-0842",
       "status": "Pending",
-      "created_at": "2026-09-24T14:37:31.629Z",
+      "created_at": "2026-09-24T16:24:49.271Z",
       "patient_name": "Sunita Rao",
       "patient_phone": "+91 98860 67890",
       "patient_age": 46,
@@ -804,7 +1010,7 @@
     {
       "id": 1,
       "username": "admin",
-      "password": "$2b$10$If3mvcnnmcerIzIChTdKtuP/bpEJ2yFnPXH1URrgxHyTXz8.vTryu"
+      "password": "$2b$10$3gRvxtHArRoK/l4O9jENUOFbBu1lcSHu54jzLtaAD3mK47Yrv/zlW"
     }
   ]
 }

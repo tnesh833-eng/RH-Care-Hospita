@@ -3,7 +3,7 @@ import path from 'path';
 import bcrypt from 'bcryptjs';
 import mysql from 'mysql2/promise';
 import dotenv from 'dotenv';
-import { Department, Doctor, Patient, Appointment, AdminStats, Hospital, HospitalFeedback } from '../src/types.ts';
+import type { Department, Doctor, Patient, Appointment, AdminStats, Hospital, HospitalFeedback } from '../src/types.ts';
 
 dotenv.config();
 
@@ -187,6 +187,35 @@ const initialHospitals: Hospital[] = [
     operating_hours: '24 Hours Open • OPD: 08:30 AM - 08:00 PM',
     departments: ['Neurology & Neurosurgery', 'Orthopedics & Joint Care', 'Dermatology & Cosmetology'],
     image_url: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?auto=format&fit=crop&w=1200&q=80'
+  },
+  {
+    id: 6,
+    name: 'RH Care Multi-Specialty & Emergency Trauma - Tech Corridor',
+    tagline: 'Quaternary Trauma Center & Robotic Critical Care Institute',
+    address: '78/1, Hosur Main Road, Near Infosys Gate 1, Electronic City Phase 1, Bengaluru, Karnataka 560100',
+    city: 'Bengaluru',
+    state: 'Karnataka',
+    pincode: '560100',
+    latitude: 12.845240,
+    longitude: 77.660230,
+    phone: '+91 (080) 4120-6000',
+    emergency_hotline: '+91 (080) 4120-6999',
+    rating: 4.91,
+    review_count: 980,
+    beds_count: 420,
+    icu_beds: 90,
+    trauma_level: 'Level 1 Comprehensive Industrial & Highway Polytrauma',
+    accreditations: ['NABH Digital & Hospital Standard', 'NABL Certified Diagnostic Lab', 'JCI Accredited'],
+    facilities: [
+      '24/7 Red-Alert Highway & Industrial Trauma Resuscitation',
+      'Advanced Biplane Neuro & Cardiac Catheterization Lab',
+      'DaVinci Surgical Console for Minimally Invasive Surgeries',
+      'Dedicated Toxicology & Occupational Health Unit',
+      'Air & Road Critical Care Transport Ambulance Fleet'
+    ],
+    operating_hours: '24 Hours Open • OPD: 08:30 AM - 08:00 PM',
+    departments: ['Cardiology', 'General & Robotic Surgery', 'Orthopedics & Joint Care', 'Internal Medicine & Diabetology'],
+    image_url: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?auto=format&fit=crop&w=1200&q=80'
   }
 ];
 
@@ -257,6 +286,17 @@ const initialFeedbacks: HospitalFeedback[] = [
     review_date: '2026-09-14',
     verified: true,
     comment: 'My debilitating sciatica pain was gone the moment I woke up from anesthesia. Dr. Alok Chandra is gifted, compassionate, and takes time to answer every question. Highly recommend the West Institute.'
+  },
+  {
+    id: 7,
+    hospital_id: 6,
+    patient_name: 'Pooja Hegde',
+    treatment: 'Acute Traumatic Fracture Reconstruction',
+    doctor_name: 'Dr. Vivek Menon, MS, DNB (Ortho)',
+    rating: 5,
+    review_date: '2026-09-22',
+    verified: true,
+    comment: 'Admitted following a highway accident near Electronic City. The prompt trauma team stabilized me in minutes. Dr. Vivek Menon performed minimally invasive fixation. Outstanding medical care right in the tech corridor!'
   }
 ];
 
@@ -501,6 +541,46 @@ const initialDoctors: Doctor[] = [
     total_patients: 8900,
     bio: 'Dedicated to curing congenital heart defects in infants and young children through scarless non-surgical device closure.',
     image: 'https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?auto=format&fit=crop&w=600&q=80'
+  },
+  {
+    id: 13,
+    doctor_name: 'Dr. Vivek Menon',
+    degrees: 'MBBS, MS (Orthopedics), DNB, Fellowship in Adult Reconstruction (Singapore)',
+    department_id: 3,
+    department_name: 'Orthopedics & Joint Care',
+    hospital_id: 6,
+    hospital_name: 'RH Care Multi-Specialty & Emergency Trauma - Tech Corridor',
+    specialization: 'Senior Consultant Joint Replacement & Polytrauma Surgeon',
+    sub_specialties: ['High-Velocity Trauma Fixation', 'Robotic Knee Replacement', 'Pelvic Reconstruction'],
+    experience_years: 17,
+    opd_timings: '09:30 AM - 04:30 PM (Mon - Sat)',
+    room_number: 'Trauma & Ortho Clinic - Suite 205',
+    consultation_fee: 900,
+    languages: ['English', 'Kannada', 'Hindi', 'Malayalam'],
+    rating: 4.93,
+    total_patients: 7200,
+    bio: 'Specialized in complex articular fractures, industrial injury reconstruction, and robotic revision joint surgeries.',
+    image: 'https://images.unsplash.com/photo-1622253692010-333f2da6031d?auto=format&fit=crop&w=600&q=80'
+  },
+  {
+    id: 14,
+    doctor_name: 'Dr. Neha Shenoy',
+    degrees: 'MBBS, MD (General Medicine), DM (Cardiology)',
+    department_id: 1,
+    department_name: 'Cardiology',
+    hospital_id: 6,
+    hospital_name: 'RH Care Multi-Specialty & Emergency Trauma - Tech Corridor',
+    specialization: 'Consultant Interventional Cardiologist',
+    sub_specialties: ['Radial Angioplasty', 'Pacemaker Implantation', 'Heart Failure Management'],
+    experience_years: 14,
+    opd_timings: '10:00 AM - 05:00 PM (Mon - Fri)',
+    room_number: 'Cardiology Center - Suite 108',
+    consultation_fee: 950,
+    languages: ['English', 'Kannada', 'Hindi', 'Konkani'],
+    rating: 4.90,
+    total_patients: 5400,
+    bio: 'Expert in trans-radial cardiac interventions, emergency STEMI management, and peripheral vascular stenting.',
+    image: 'https://images.unsplash.com/photo-1594824813583-7c87c0823297?auto=format&fit=crop&w=600&q=80'
   }
 ];
 
@@ -579,24 +659,27 @@ export function calculateHaversineDistanceKm(lat1: number, lon1: number, lat2: n
 
 // Coordinate extraction or estimation for known city areas
 export function estimateCoordinatesForAddress(address: string): { lat: number; lng: number } {
-  const lower = address.toLowerCase();
-  if (lower.includes('whitefield') || lower.includes('itpl') || lower.includes('marathahalli') || lower.includes('kadugodi')) {
-    return { lat: 12.9750, lng: 77.7300 };
+  const lower = (address || '').toLowerCase();
+  if (lower.includes('electronic city') || lower.includes('ecity') || lower.includes('hosur') || lower.includes('bommasandra') || lower.includes('chandapura') || lower.includes('hosa road') || lower.includes('kudlu') || lower.includes('singasandra') || lower.includes('560100')) {
+    return { lat: 12.845240, lng: 77.660230 };
   }
-  if (lower.includes('indiranagar') || lower.includes('hal') || lower.includes('domlur') || lower.includes('mg road') || lower.includes('old airport')) {
-    return { lat: 12.9730, lng: 77.6400 };
+  if (lower.includes('whitefield') || lower.includes('itpl') || lower.includes('marathahalli') || lower.includes('kadugodi') || lower.includes('hoodi') || lower.includes('varthur') || lower.includes('brookefield') || lower.includes('bellandur') || lower.includes('mahadevapura') || lower.includes('560066')) {
+    return { lat: 12.986420, lng: 77.728140 };
   }
-  if (lower.includes('hebbal') || lower.includes('bellary') || lower.includes('yelahanka') || lower.includes('manyata') || lower.includes('rt nagar')) {
-    return { lat: 13.0360, lng: 77.5975 };
+  if (lower.includes('indiranagar') || lower.includes('hal') || lower.includes('domlur') || lower.includes('mg road') || lower.includes('old airport') || lower.includes('ulsoor') || lower.includes('koramangala') || lower.includes('murugeshpalya') || lower.includes('tippasandra') || lower.includes('560038')) {
+    return { lat: 12.971891, lng: 77.641151 };
   }
-  if (lower.includes('jayanagar') || lower.includes('jp nagar') || lower.includes('btm') || lower.includes('banashankari') || lower.includes('koramangala')) {
-    return { lat: 12.9280, lng: 77.5850 };
+  if (lower.includes('hebbal') || lower.includes('bellary') || lower.includes('yelahanka') || lower.includes('manyata') || lower.includes('rt nagar') || lower.includes('sahakara') || lower.includes('nagavara') || lower.includes('vidyaranyapura') || lower.includes('devanahalli') || lower.includes('560024')) {
+    return { lat: 13.035840, lng: 77.597022 };
   }
-  if (lower.includes('rajajinagar') || lower.includes('malleswaram') || lower.includes('yeshwanthpur') || lower.includes('vijayanagar')) {
-    return { lat: 12.9970, lng: 77.5540 };
+  if (lower.includes('jayanagar') || lower.includes('jp nagar') || lower.includes('btm') || lower.includes('banashankari') || lower.includes('bannerghatta') || lower.includes('kanakapura') || lower.includes('padmanabhanagar') || lower.includes('basavanagudi') || lower.includes('560011')) {
+    return { lat: 12.929820, lng: 77.583310 };
+  }
+  if (lower.includes('rajajinagar') || lower.includes('malleswaram') || lower.includes('yeshwanthpur') || lower.includes('vijayanagar') || lower.includes('basaveshwaranagar') || lower.includes('mahalakshmi') || lower.includes('peenya') || lower.includes('560010')) {
+    return { lat: 12.998240, lng: 77.553020 };
   }
   // Default central point
-  return { lat: 12.9716, lng: 77.5946 };
+  return { lat: 12.971891, lng: 77.641151 };
 }
 
 class DatabaseService {
@@ -617,8 +700,8 @@ class DatabaseService {
       if (fs.existsSync(DB_FILE)) {
         const content = fs.readFileSync(DB_FILE, 'utf-8');
         const parsed = JSON.parse(content);
-        // Ensure new schema elements exist
-        if (parsed.hospitals && parsed.hospitals.length > 0 && parsed.feedbacks) {
+        // Ensure all updated hospitals and doctors exist
+        if (parsed.hospitals && parsed.hospitals.length >= 6 && parsed.doctors && parsed.doctors.length >= 14 && parsed.feedbacks) {
           return parsed;
         }
       }
@@ -706,7 +789,7 @@ class DatabaseService {
     });
 
     if (userLat !== undefined && userLng !== undefined && !isNaN(userLat) && !isNaN(userLng)) {
-      hospitals.sort((a, b) => (a.distance_km || 999) - (b.distance_km || 999));
+      hospitals.sort((a, b) => (a.distance_km ?? 999) - (b.distance_km ?? 999));
     }
 
     return hospitals;
@@ -890,16 +973,14 @@ class DatabaseService {
     };
     this.memoryDB.patients.push(newPatient);
 
-    // 2. Doctor details
-    const doctor = this.memoryDB.doctors.find(d => d.id === Number(data.doctor_id));
-
-    // 3. Hospital routing: if not supplied, route to doctor's hospital or scan nearest
+    // 2. Hospital routing: if not supplied, route to nearest scanned hospital
     let hospitalId = data.hospital_id;
-    if (!hospitalId && doctor?.hospital_id) {
-      hospitalId = doctor.hospital_id;
+    if (!hospitalId && data.doctor_id) {
+      const doc = this.memoryDB.doctors.find(d => d.id === Number(data.doctor_id));
+      if (doc?.hospital_id) hospitalId = doc.hospital_id;
     }
     if (!hospitalId) {
-      const coords = data.userLat && data.userLng
+      const coords = (data.userLat !== undefined && data.userLng !== undefined)
         ? { lat: data.userLat, lng: data.userLng }
         : estimateCoordinatesForAddress(data.address);
       const hospitals = await this.getHospitals(coords.lat, coords.lng);
@@ -907,6 +988,13 @@ class DatabaseService {
     }
 
     const hospital = this.memoryDB.hospitals.find(h => h.id === hospitalId);
+
+    // 3. Doctor details
+    let doctor = this.memoryDB.doctors.find(d => d.id === Number(data.doctor_id));
+    if (!doctor) {
+      // Pick specialist doctor at the assigned hospital
+      doctor = this.memoryDB.doctors.find(d => d.hospital_id === hospitalId) || this.memoryDB.doctors[0];
+    }
 
     // Calculate distance
     let dist: number | undefined = undefined;

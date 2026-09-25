@@ -32,15 +32,6 @@ export default function App() {
   const [userLocation, setUserLocation] = useState<{ lat: number; lng: number } | null>(null);
   const [isDetectingLocation, setIsDetectingLocation] = useState(false);
 
-  // Google Maps Quota Defense state (Required by Google Maps Platform skill)
-  const [quotaExceeded, setQuotaExceeded] = useState<boolean>(false);
-
-  useEffect(() => {
-    const handleQuota = () => setQuotaExceeded(true);
-    window.addEventListener('gmp-quota-exceeded', handleQuota);
-    return () => window.removeEventListener('gmp-quota-exceeded', handleQuota);
-  }, []);
-
   // Admin authentication state
   const [adminUser, setAdminUser] = useState<{ id: number; username: string } | null>(() => {
     try {
@@ -168,25 +159,7 @@ export default function App() {
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-900 font-sans antialiased">
       
-      {/* Google Maps Quota Exceeded Sticky Notice Banner */}
-      {quotaExceeded && (
-        <div className="bg-amber-50 border-b border-amber-200 text-amber-900 px-4 py-2.5 text-xs md:text-sm text-center sticky top-0 z-50 shadow-sm">
-          <span>
-            Google Maps Platform quota reached. If you are the app owner, visit{' '}
-            <a
-              href="https://developers.google.com/maps/ai/ai-studio?utm_campaign=gmp_mcp_codeassist_v1_aistudio#quota_exceeded_errors"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline font-semibold text-amber-950 hover:text-amber-800"
-            >
-              maps developer site
-            </a>{' '}
-            for instructions to update your account.
-          </span>
-        </div>
-      )}
-
-      {/* Navigation Bar (Clean: Database button removed, RH Care Hospital brand) */}
+      {/* Navigation Bar (RH Care Hospital brand) */}
       <Navbar
         currentTab={currentTab}
         setCurrentTab={setCurrentTab}

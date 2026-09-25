@@ -1,4 +1,4 @@
-import { Department, Doctor, Patient, Appointment, AdminStats, Hospital, HospitalFeedback } from '../types.ts';
+import { Department, Doctor, Patient, Appointment, AdminStats, Hospital, HospitalFeedback, SerpApiPlace, MapsConfigResponse } from '../types.ts';
 
 const API_BASE = '/api';
 
@@ -193,5 +193,51 @@ export const api = {
   async getHealth(): Promise<{ status: string; databaseEngine: string }> {
     const res = await fetch(`${API_BASE}/health`);
     return await res.json();
+  },
+
+  // Google Maps Platform & SerpApi Search Engine
+  async getMapsConfig(): Promise<MapsConfigResponse> {
+    const res = await fetch(`${API_BASE}/maps/config`);
+    const json = await res.json();
+    return json;
+  },
+
+  async updateMapsConfig(data: { googleMapsApiKey?: string; serpApiKey?: string }): Promise<any> {
+    const res = await fetch(`${API_BASE}/maps/config`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    });
+    const json = await res.json();
+    if (!res.ok || !json.success) {
+      throw new Error(json.message || 'Failed to update maps config');
+    }
+    return json;
+  },
+
+  async searchGoogleMapsViaSerpApi(params: {
+    query: string;
+    lat?: number;
+    lng?: number;
+    apiKey?: string;
+  }): Promise<{
+    engine: string;
+    engineUrl: string;
+    source: string;
+    count: number;
+    data: SerpApiPlace[];
+  }> {
+    const searchParams = new URLSearchParams();
+    searchParams.append('q', params.query || 'RH Care Hospital');
+    if (params.lat !== undefined) searchParams.append('lat', String(params.lat));
+    if (params.lng !== undefined) searchParams.append('lng', String(params.lng));
+    if (params.apiKey) searchParams.append('api_key', params.apiKey);
+
+    const res = await fetch(`${API_BASE}/maps/serpapi-search?${searchParams.toString()}`);
+    const json = await res.json();
+    if (!res.ok || !json.success) {
+      throw new Error(json.message || 'Failed to search Google Maps via SerpApi');
+    }
+    return json;
   }
 };

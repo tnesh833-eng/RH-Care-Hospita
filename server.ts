@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express, { type Request, type Response } from 'express';
 import cors from 'cors';
 import path from 'path';
 import fs from 'fs';
@@ -209,10 +209,10 @@ app.post('/api/appointments', async (req: Request, res: Response) => {
   try {
     const { name, phone, age, gender, date, address, department, doctor_id, hospital_id, symptoms, userLat, userLng } = req.body;
 
-    if (!name || !date || !address || !doctor_id) {
+    if (!name || !date || !address) {
       return res.status(400).json({
         success: false,
-        message: 'Patient name, appointment date, address, and doctor selection are required.'
+        message: 'Patient name, appointment date, and residential address & locality are required.'
       });
     }
 
@@ -224,7 +224,7 @@ app.post('/api/appointments', async (req: Request, res: Response) => {
       date: String(date),
       address: String(address).trim(),
       department: department ? String(department) : undefined,
-      doctor_id: Number(doctor_id),
+      doctor_id: doctor_id ? Number(doctor_id) : 0,
       hospital_id: hospital_id ? Number(hospital_id) : undefined,
       symptoms: symptoms ? String(symptoms).trim() : undefined,
       userLat: userLat !== undefined ? Number(userLat) : undefined,

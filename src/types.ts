@@ -107,3 +107,32 @@ export interface AdminStats {
   totalAppointments: number;
   pendingAppointments: number;
 }
+
+export interface SerpApiPlace {
+  position?: number;
+  title: string;
+  address: string;
+  rating?: number;
+  reviews?: number;
+  phone?: string;
+  latitude?: number;
+  longitude?: number;
+  open_state?: string;
+  hours?: string;
+  thumbnail?: string;
+  photos?: string[];
+  type?: string;
+  place_id?: string;
+  website?: string;
+  distance_km?: number;
+  hospital_id?: number;
+}
+
+export interface MapsConfigResponse {
+  googleMapsApiKeyConfigured: boolean;
+  serpApiKeyConfigured: boolean;
+  serpApiEngine: string;
+  serpApiUrl: string;
+  activeGoogleMapsKeyMasked: string;
+  activeSerpApiKeyMasked: string;
+}
